@@ -1,0 +1,133 @@
+EMPLOYEE TABLE :
+
+| EmployeeID | Name          | Age | Email                                                 | Department | Salary |
+| ---------- | ------------- | --- | ----------------------------------------------------- | ---------- | ------ |
+| 1          | Alice Johnson | 35  | [alice@example.com](mailto:alice@example.com)         | HR         | 55000  |
+| 2          | Bob Smith     | 28  | [bob.smith@example.com](mailto:bob.smith@example.com) | IT         | 62000  |
+| 3          | Charlie Brown | 32  | [charlie@example.com](mailto:charlie@example.com)     | Sales      | 58000  |
+| 4          | David Miller  | 27  | [david.m@example.com](mailto:david.m@example.com)     | HR         | 45000  |
+| 5          | Emma Williams | 31  | [emma.w@example.com](mailto:emma.w@example.com)       | IT         | 75000  |
+| 6          | Andrew Clark  | 29  | [andrew@example.com](mailto:andrew@example.com)       | Marketing  | 39000  |
+| 7          | Amy Adams     | 26  | [amy.a@example.com](mailto:amy.a@example.com)         | Sales      | 67000  |
+| 8          | George Taylor | 41  | [george.t@example.com](mailto:george.t@example.com)   | HR         | 70000  |
+
+
+
+
+
+
+SELECT * FROM Employees;
+
+| EmployeeID | Name          | Age | Email                                                 | Department | Salary |
+| ---------- | ------------- | --- | ----------------------------------------------------- | ---------- | ------ |
+| 1          | Alice Johnson | 35  | [alice@example.com](mailto:alice@example.com)         | HR         | 55000  |
+| 2          | Bob Smith     | 28  | [bob.smith@example.com](mailto:bob.smith@example.com) | IT         | 62000  |
+| ...        | ...           | ... | ...                                                   | ...        | ...    |
+
+
+SELECT Name, Email FROM Employees;
+
+| Name          | Email                                                 |
+| ------------- | ----------------------------------------------------- |
+| Alice Johnson | [alice@example.com](mailto:alice@example.com)         |
+| Bob Smith     | [bob.smith@example.com](mailto:bob.smith@example.com) |
+| ...           | ...                                                   |
+
+
+
+
+
+SELECT * FROM Employees
+WHERE Department = 'IT';
+
+| Name          | Department |
+| ------------- | ---------- |
+| Bob Smith     | IT         |
+| Emma Williams | IT         |
+
+
+SELEC| Name          | Department | Salary |
+| ------------- | ---------- | ------ |
+| Bob Smith     | IT         | 62000  |
+| Charlie Brown | Sales      | 58000  |
+| ...           | ...        | ...    |
+
+
+SELECT * FROM Employees
+WHERE Age > 30 AND Department = 'HR';
+
+| Name          | Age | Department |
+| ------------- | --- | ---------- |
+| Alice Johnson | 35  | HR         |
+| George Taylor | 41  | HR         |
+
+
+SELECT * FROM Employees
+WHERE Department = 'Sales' OR Salary > 60000;
+
+| Name          | Department | Salary |
+| ------------- | ---------- | ------ |
+| Bob Smith     | IT         | 62000  |
+| Charlie Brown | Sales      | 58000  |
+| ...           | ...        | ...    |
+
+
+SELECT * FROM Employees
+WHERE Name LIKE 'A%';
+
+| Name          | Email                                           |
+| ------------- | ----------------------------------------------- |
+| Alice Johnson | [alice@example.com](mailto:alice@example.com)   |
+| Andrew Clark  | [andrew@example.com](mailto:andrew@example.com) |
+| Amy Adams     | [amy.a@example.com](mailto:amy.a@example.com)   |
+
+
+SELECT * FROM Employees
+WHERE Salary BETWEEN 40000 AND 70000;
+
+| Name          | Salary |
+| ------------- | ------ |
+| Alice Johnson | 55000  |
+| Charlie Brown | 58000  |
+| ...           | ...    |
+
+
+
+
+
+
+SELECT * FROM Employees
+ORDER BY Age ASC;
+
+| Name         | Age |
+| ------------ | --- |
+| Amy Adams    | 26  |
+| David Miller | 27  |
+| ...          | ... |
+
+
+SELECT * FROM Employees
+ORDER BY Salary DESC;
+
+| Name          | Salary |
+| ------------- | ------ |
+| Emma Williams | 75000  |
+| George Taylor | 70000  |
+| ...           | ...    |
+
+SELECT * FROM Employees
+ORDER BY Department ASC, Name ASC;
+
+| Department | Name          |
+| ---------- | ------------- |
+| HR         | Alice Johnson |
+| HR         | David Miller  |
+| ...        | ...           |
+
+
+
+
+
+
+
+

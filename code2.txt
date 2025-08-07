@@ -1,0 +1,38 @@
+//Select all columns from Employees
+SELECT * FROM Employees;
+
+//Select only Name and Email
+SELECT Name, Email FROM Employees;
+
+//Get employees in the 'IT' department
+SELECT * FROM Employees
+WHERE Department = 'IT';
+
+//Get employees who are older than 30 and belong to 'HR'
+SELECT * FROM Employees
+WHERE Age > 30 AND Department = 'HR';
+
+//Get employees who are either in 'Sales' or have salary above 60000
+SELECT * FROM Employees
+WHERE Department = 'Sales' OR Salary > 60000;
+
+//Find employees whose name starts with 'A'
+SELECT * FROM Employees
+WHERE Name LIKE 'A%';
+
+//Find employees with salary between 40000 and 70000
+SELECT * FROM Employees
+WHERE Salary BETWEEN 40000 AND 70000;
+
+
+//List employees sorted by Age (youngest to oldest)
+SELECT * FROM Employees
+ORDER BY Age ASC;
+
+ //List employees sorted by Salary (highest to lowest)
+SELECT * FROM Employees
+ORDER BY Salary DESC;
+
+ //Sort employees by Department (A-Z) and then by Name (A-Z)
+SELECT * FROM Employees
+ORDER BY Department ASC, Name ASC;
